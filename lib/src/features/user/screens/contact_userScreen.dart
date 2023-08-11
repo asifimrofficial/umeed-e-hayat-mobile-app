@@ -1,7 +1,5 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 import '../../../common_widgets/roundedButton.dart';
 
@@ -18,7 +16,7 @@ class _ContactUserScreenState extends State<ContactUserScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
-        padding: EdgeInsets.only(top: 50, left: 20, right: 20),
+        padding: const EdgeInsets.only(top: 50, left: 20, right: 20),
         dragStartBehavior: DragStartBehavior.down,
         reverse: false,
         child: Column(
@@ -38,7 +36,7 @@ class _ContactUserScreenState extends State<ContactUserScreen> {
                   color: Colors.black45),
               textAlign: TextAlign.center,
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Padding(
@@ -53,11 +51,11 @@ class _ContactUserScreenState extends State<ContactUserScreen> {
                     borderRadius: BorderRadius.circular(10),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.red),
+                    borderSide: const BorderSide(color: Colors.red),
                     borderRadius: BorderRadius.circular(10),
                   ),
                   helperText: 'Maximum 500 words',
-                  helperStyle: TextStyle(
+                  helperStyle: const TextStyle(
                       fontSize: 12), // Customize the helper text style
                 ),
                 maxLines: 6,

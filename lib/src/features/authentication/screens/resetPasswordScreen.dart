@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../common_widgets/TextField.dart';
-import '../../../common_widgets/roundedButton.dart';
 import '../../../constants/app_colors.dart';
 import '../../../routing/route_name.dart';
 import '../controllers/reset_password/reset_password_controller.dart';

@@ -1,7 +1,5 @@
-import 'package:blood_donation_app/src/features/authentication/screens/loginScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:otp_text_field/otp_field.dart';
 
 import '../../../../common_widgets/popup.dart';
 import '../../../../routing/route_name.dart';

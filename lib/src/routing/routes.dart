@@ -6,11 +6,9 @@ import 'package:get/get.dart';
 import '../features/authentication/screens/resetPasswordScreen.dart';
 import '../features/donation/screens/createRequestScreen.dart';
 import '../../src/routing/route_name.dart';
-import '../features/authentication/screens/otpScreen.dart';
 import '../features/authentication/screens/signupScreen.dart';
 import '../features/authentication/screens/loginScreen.dart';
 import '../features/authentication/screens/splashScreen.dart';
-import '../features/home/HomeScreen.dart';
 import '../features/user/screens/contact_userScreen.dart';
 
 
@@ -55,7 +53,7 @@ class AppRoutes{
      ),
     GetPage(
       name: RoutesName.donorProfile,
-     page: ()=> UserProfile(),
+     page: ()=> const UserProfile(),
      transition: Transition.native,
      transitionDuration:const Duration(milliseconds: 500)
      ),

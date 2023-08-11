@@ -7,7 +7,7 @@ import '../../authentication/controllers/user_preferences.dart/login_shared_pref
 import '../controllers/userProfileController.dart';
 
 class UserProfile extends StatefulWidget {
-  UserProfile({super.key});
+  const UserProfile({super.key});
 
   @override
   State<UserProfile> createState() => _UserProfileState();
@@ -44,7 +44,7 @@ class _UserProfileState extends State<UserProfile> {
             return Center(child: CircularProgressIndicator(
               color: AppColors.mainColor ));
           case Status.ERROR:
-            return Text("Something went wrong");
+            return const Text("Something went wrong");
           case Status.COMPLETED:
             return SafeArea(
               child: SingleChildScrollView(
@@ -53,7 +53,7 @@ class _UserProfileState extends State<UserProfile> {
                   children: [
                     Column(
                       children: [
-                        Container(
+                        SizedBox(
                           height: 100,
                           width: 100,
                           child: ClipRRect(
@@ -124,7 +124,7 @@ class _UserProfileState extends State<UserProfile> {
                             userProfileController
                                 .rxUserPorfileModel.value.data!.name
                                 .toString(),
-                            style: TextStyle(
+                            style: const TextStyle(
                                 fontSize: 30, fontWeight: FontWeight.w800)),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -134,7 +134,7 @@ class _UserProfileState extends State<UserProfile> {
                                 userProfileController
                                     .rxUserPorfileModel.value.data!.city
                                     .toString(),
-                                style: TextStyle(
+                                style: const TextStyle(
                                     fontSize: 15, fontWeight: FontWeight.w600)),
                           ],
                         ),
@@ -331,7 +331,7 @@ class _UserProfileState extends State<UserProfile> {
               ),
             );
           default:
-            return Center(child: Text("default called"));
+            return const Center(child: Text("default called"));
         }
       }),
     );

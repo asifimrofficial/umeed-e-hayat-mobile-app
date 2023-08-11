@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1079121665235",
+    "project_id": "umeed-e-hayat",
+    "storage_bucket": "umeed-e-hayat.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1079121665235:android:0c3f51b3ba09b29aef4826",
+        "android_client_info": {
+          "package_name": "com.example.blood_donation_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1079121665235-3u6sc65krrvo6qh4b37mmud83771q65h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrHXRDDKGUQwWPZyfdvr9w3l8YHlbsUpU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1079121665235-3u6sc65krrvo6qh4b37mmud83771q65h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,11 +1,7 @@
 import 'package:blood_donation_app/src/features/authentication/controllers/user_preferences.dart/login_shared_pref.dart';
-import 'package:blood_donation_app/src/features/authentication/models/UserModel.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:url_launcher/url_launcher.dart';
 import '../../../response/status.dart';
-import '../../../routing/route_name.dart';
-import '../../../utils/utils.dart';
 import '../../user/repository/userProfileRepository.dart';
 import '../models/userProfileModel.dart';
 
@@ -22,7 +18,7 @@ class UserProfileController extends GetxController{
   void getUser(){
 
     userPreference.getUser().then((value) => {
-          print("printing user id${value}"),
+          print("printing user id$value"),
       _api.getUser(value).then((value) => {
       setRxRequestStatus(Status.COMPLETED),
       setRxUserProfile(value),
@@ -38,13 +34,13 @@ class UserProfileController extends GetxController{
   }
   void updateUser(data){
     userPreference.getUser().then((value) => {
-      print("printing user id blash ${value}"),
+      print("printing user id blash $value"),
       _api.updateUser(data,value).then((value) => {
         setRxRequestStatus(Status.COMPLETED),
         setRxUserProfile(value),
         isDonor.value=value.data!.isdonor!
       }).onError((error, stackTrace) => {
-        print("error in update user"+error.toString()),
+        print("error in update user$error"),
         setRxRequestStatus(Status.ERROR)
       })
     }).onError((error, stackTrace) => {

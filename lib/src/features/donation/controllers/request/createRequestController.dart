@@ -64,4 +64,3 @@ class CreateRequestController extends GetxController {
   }
 }
 
-class RouteName {}

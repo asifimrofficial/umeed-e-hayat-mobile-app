@@ -1,8 +1,5 @@
 import 'package:blood_donation_app/src/constants/app_colors.dart';
-import 'package:blood_donation_app/src/routing/route_name.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import '../constants/app_colors.dart';
 
 Widget listTile(
     {String image = '',
@@ -31,7 +28,7 @@ Widget listTile(
           ),
           padding: const EdgeInsets.only(left: 15),
           child: Row(mainAxisAlignment: MainAxisAlignment.start, children: [
-            Container(
+            SizedBox(
               height: 80,
               width: 80,
               child: ClipRRect(

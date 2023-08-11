@@ -1,7 +1,5 @@
 import 'package:blood_donation_app/src/features/authentication/controllers/user_preferences.dart/login_shared_pref.dart';
-import 'package:blood_donation_app/src/features/user/screens/profileScreen.dart';
 import 'package:blood_donation_app/src/routing/route_name.dart';
-import 'package:blood_donation_app/src/routing/routes.dart';
 import 'package:blood_donation_app/src/utils/utils.dart';
 import 'package:blood_donation_app/views/MainScreen.dart';
 import 'package:flutter/material.dart';
@@ -17,13 +15,13 @@ class SplashScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     UserPreference userPreference=UserPreference();
 
-     Future.delayed(Duration(seconds: 3), () {
+     Future.delayed(const Duration(seconds: 3), () {
       // userPreference.removeUser();
       
       userPreference.getUser().then((value){
         if( value!=null){
           print("user is logged in with id $value");
-          Get.to(MainScreen());
+          Get.to(const MainScreen());
           // Get.toNamed(RoutesName.donorProfile);
       }else{
         Get.toNamed(RoutesName.login);

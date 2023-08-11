@@ -80,8 +80,8 @@ Container detail_rows(key,value) {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                      Text(
-                      '${key}: ',
-                      style: TextStyle(
+                      '$key: ',
+                      style: const TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.w300,
                           fontSize: 20),

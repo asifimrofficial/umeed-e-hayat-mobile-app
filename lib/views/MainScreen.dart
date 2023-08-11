@@ -1,7 +1,6 @@
 import 'package:blood_donation_app/src/features/donor/screens/searchDonor.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:flutter/material.dart';
-import '../src/features/donation/screens/DonationRequestScreen.dart';
 import '../src/features/user/screens/profileScreen.dart';
 import '../src/features/home/HomeScreen.dart';
 import '../src/features/donation/screens/createRequestScreen.dart';
@@ -22,7 +21,7 @@ class _MainScreenState extends State<MainScreen> {
     const HomeScreen(),
     const SearchDonorScreen(),
     const CreateReuqest(),
-    UserProfile(),
+    const UserProfile(),
   ];
   
   @override
@@ -47,8 +46,8 @@ class _MainScreenState extends State<MainScreen> {
             padding: const EdgeInsets.all(8.0),
             child: GNav(
               activeColor: Colors.red,
-              duration: Duration(milliseconds: 400),
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+              duration: const Duration(milliseconds: 400),
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
               gap: 20,
               tabs: [
               GButton(

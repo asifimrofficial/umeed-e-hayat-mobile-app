@@ -23,7 +23,7 @@ class RoundedButton extends StatelessWidget {
             const CircularProgressIndicator(
               color: Colors.white,
             ): Text(text,
-                style: TextStyle(
+                style: const TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
                     color: Colors.white)) 

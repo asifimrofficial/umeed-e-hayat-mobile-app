@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 
 import '../../../common_widgets/TextField.dart';
 import '../../../common_widgets/dropDownButton.dart';
+import '../../notifications/controller/notificationController.dart';
 import '../controllers/request/createRequestController.dart';
 
 class CreateReuqest extends StatefulWidget {
@@ -15,13 +16,14 @@ class CreateReuqest extends StatefulWidget {
 
 class _CreateReuqestState extends State<CreateReuqest> {
   final creatRequestController = Get.put(CreateRequestController());
+ final notificationController = Get.put(NotificationController());
   @override
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        title: Text("Create A Request"),
+        title: const Text("Create A Request"),
         centerTitle: true,
       ),
       body: SingleChildScrollView(
@@ -107,6 +109,7 @@ class _CreateReuqestState extends State<CreateReuqest> {
                         isDismissible: true);
                   } else {
                   creatRequestController.creatRequestApi();
+                  notificationController.sendNotification(title: 'New Blood Reuqes', body: 'Name: ${creatRequestController.nameController().text} \n Blood Group: ${creatRequestController.bloodController.value} \n Hospital: ${creatRequestController.hospitalController().text} \n Location: ${creatRequestController.locationController().text} \n Phone: ${creatRequestController.phoneController().text} \n HB Level: ${creatRequestController.hbController().text} \n Additional Notes: ${creatRequestController.noteController().text}');
                   }
                 },
                 height: 50.0,

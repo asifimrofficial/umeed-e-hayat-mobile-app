@@ -6,8 +6,6 @@ import 'package:get/get.dart';
 
 import '../../../common_widgets/custom_dialog.dart';
 import '../../../response/status.dart';
-import '../../../routing/route_name.dart';
-import '../../../utils/date_time_convert.dart';
 
 class DonationRequestScreen extends StatefulWidget {
   const DonationRequestScreen({super.key});
@@ -18,6 +16,7 @@ class DonationRequestScreen extends StatefulWidget {
 
 class _DonationRequestScreenState extends State<DonationRequestScreen> {
   final requestListController = Get.put(RequestListController());
+  
   @override
   void initState() {
     // TODO: implement initState
@@ -37,9 +36,9 @@ class _DonationRequestScreenState extends State<DonationRequestScreen> {
           () {
             switch (requestListController.rxRequestStatus.value) {
               case Status.LOADING:
-                return Center(child: CircularProgressIndicator());
+                return const Center(child: CircularProgressIndicator());
               case Status.ERROR:
-                return Text("Something went wrong");
+                return const Text("Something went wrong");
               case Status.COMPLETED:
                 return ListView.builder(
                   itemCount: requestListController
@@ -60,7 +59,7 @@ class _DonationRequestScreenState extends State<DonationRequestScreen> {
                             .rxRequestListModel.value.data![index],
                         TextButton(
                           onPressed: () {
-                            Navigator.of(context!).pop();
+                            Navigator.of(context).pop();
                           },
                           child: const Text(
                             'OK',
@@ -76,7 +75,7 @@ class _DonationRequestScreenState extends State<DonationRequestScreen> {
                   },
                 );
               default:
-                return Text("Something went wrong");
+                return const Text("Something went wrong");
             }
           },
         ));

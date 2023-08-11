@@ -1,9 +1,6 @@
 import 'package:blood_donation_app/src/common_widgets/roundedButton.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:otp_text_field/otp_field.dart';
-import 'package:otp_text_field/otp_text_field.dart';
-import 'package:otp_text_field/style.dart';
 import '../../../common_widgets/TextField.dart';
 import '../../../constants/image_strings.dart';
 import '../controllers/signUp/otp_controller.dart';
@@ -36,7 +33,7 @@ class _OtpScreenState extends State<OtpScreen> {
             ),
             Text(
               "Please enter the OTP sent to your email " + widget.email,
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.normal),
+              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.normal),
               textAlign: TextAlign.center,
             ),
             const SizedBox(

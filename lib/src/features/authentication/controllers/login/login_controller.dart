@@ -5,7 +5,6 @@ import 'package:get/get.dart';
 import '../../../../routing/route_name.dart';
 import '../../../../utils/utils.dart';
 import '../../repository/login/login_repository.dart';
-import 'dart:convert';
 
 class LoginController extends GetxController{
   final _api= LoginRepository();

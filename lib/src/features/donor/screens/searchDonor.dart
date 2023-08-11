@@ -1,10 +1,7 @@
-import 'package:blood_donation_app/src/features/donation/controllers/request/createRequestController.dart';
-import 'package:blood_donation_app/test.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:url_launcher/url_launcher.dart';
-
-import '../../../common_widgets/bottomSheet.dart';
+import '../../../common_widgets/bottom_sheet_donor_details.dart';
 import '../../../common_widgets/donorListTile.dart';
 import '../../../response/status.dart';
 import '../../../routing/route_name.dart';
@@ -21,17 +18,16 @@ class _SearchDonorScreenState extends State<SearchDonorScreen> {
   
   Future<void> _launchUrl(phone) async {
     
-  final Uri _url = Uri.parse('tel:${phone}');
-  if (await canLaunchUrl(_url)) {
-    await launchUrl(_url);
+  final Uri url = Uri.parse('tel:$phone');
+  if (await canLaunchUrl(url)) {
+    await launchUrl(url);
    
   }else{
-     throw Exception('Could not launch $_url');
+     throw Exception('Could not launch $url');
   }
 }
      @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     donorsListController.getDonorsList();
   }
@@ -48,12 +44,12 @@ class _SearchDonorScreenState extends State<SearchDonorScreen> {
 
          switch(donorsListController.rxRequestStatus.value){
           case Status.LOADING:
-          return Center(child: CircularProgressIndicator());
+          return const Center(child: CircularProgressIndicator());
           case Status.ERROR:
           return Text(donorsListController.rxRequestStatus.value.toString());
            case Status.COMPLETED:
-           if(donorsListController.rxDonorListModel.value.data!.length==0){
-             return Center(child: Text("No Donors Available"));
+           if(donorsListController.rxDonorListModel.value.data!.isEmpty){
+             return const Center(child: Text("No Donors Available"));
            }
            else{
            return ListView.builder(
@@ -62,15 +58,13 @@ class _SearchDonorScreenState extends State<SearchDonorScreen> {
         itemBuilder: (BuildContext context, int index) {
           return listTile(onTap: (){
             Get.bottomSheet(modelBottomSheet(
-
                 gender: donorsListController.rxDonorListModel.value.data![index].gender,
                 image: donorsListController.rxDonorListModel.value.data![index].image , 
                 name: donorsListController.rxDonorListModel.value.data![index].name, 
                 location: donorsListController.rxDonorListModel.value.data![index].city, 
                 bloodGroup: donorsListController.rxDonorListModel.value.data![index].bloodgroup,
                 donated: donorsListController.rxDonorListModel.value.data![index].noOfDonations.toString(),
-                onCallpressed: ()=>_launchUrl(donorsListController.rxDonorListModel.value.data![index].contact,
-                
+                onCallpressed: ()=>_launchUrl(donorsListController.rxDonorListModel.value.data![index].contact,           
                 ),
                 onRequestPressed: ()=>Get.offNamed(RoutesName.requestDonor)
               )
@@ -84,18 +78,12 @@ class _SearchDonorScreenState extends State<SearchDonorScreen> {
             name: donorsListController.rxDonorListModel.value.data![index].name,
             location: donorsListController.rxDonorListModel.value.data![index].city,
             bloodGroup: donorsListController.rxDonorListModel.value.data![index].bloodgroup,
-            
-            // requestListController.rxRequestListModel.value.data![index].name, 
-            // requestListController.rxRequestListModel.value.data![index].location, 
-            // requestListController.rxRequestListModel.value.data![index].bloodgroup, 
-            // requestListController.rxRequestListModel.value.data![index].createdAt, 
-             
-             );
+                          );
         },
       );
            }
           default:
-          return Text("Something went wrong");
+          return const Text("Something went wrong");
          }
       }),
 

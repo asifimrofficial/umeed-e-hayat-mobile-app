@@ -72,7 +72,7 @@ Widget listTile(String name, String Location, String bloodGroup, String Time,onT
                     )
                   ],
                 ),
-                Spacer(),
+                const Spacer(),
                 TextButton(onPressed: (){}, child: const Text('Donate',style: TextStyle(color: Color.fromRGBO(255, 33, 86, 1),letterSpacing: 2,fontWeight: FontWeight.w500,fontSize: 18),),)
                     ],
                   )
@@ -97,6 +97,6 @@ TextStyle hintTextStyle(double fontSize) {
   return TextStyle(
                       fontSize: fontSize,
                       fontWeight: FontWeight.normal,
-                      color: Color.fromARGB(255, 167, 167, 167)
+                      color: const Color.fromARGB(255, 167, 167, 167)
                     );
 }

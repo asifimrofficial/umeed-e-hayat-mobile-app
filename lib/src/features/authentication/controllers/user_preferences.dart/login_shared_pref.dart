@@ -1,7 +1,6 @@
 import 'package:blood_donation_app/src/features/authentication/models/UserModel.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'dart:convert';
 class UserPreference extends GetxController{
   Future <bool>saveUser(UserModel userModel)async{
     SharedPreferences sp= await SharedPreferences.getInstance();

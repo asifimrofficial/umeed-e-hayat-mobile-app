@@ -1,8 +1,6 @@
 // ignore: file_names
 import 'package:blood_donation_app/src/constants/app_sizes.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import '../constants/app_sizes.dart';
 class CustomButton {
   static Widget RoundedButtonWithImageText(
       {required Color? color, String? text, required onTap, required String? image}) {
@@ -30,7 +28,7 @@ class CustomButton {
                 width: AppSizes.w5,
               ),
                Text(text!,
-                  style: TextStyle(
+                  style: const TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
                       color: Colors.white)),

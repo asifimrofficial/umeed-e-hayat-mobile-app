@@ -1,13 +1,9 @@
-import 'dart:math';
 
 import 'package:blood_donation_app/src/features/authentication/controllers/user_preferences.dart/login_shared_pref.dart';
-import 'package:blood_donation_app/src/features/authentication/models/UserModel.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../../routing/route_name.dart';
 import '../../../../utils/utils.dart';
 import '../../repository/reset password/reset_password_repository.dart';
-import 'dart:convert';
 
 import '../../screens/resetPasswordOtpScreen.dart';
 

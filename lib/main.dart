@@ -1,24 +1,24 @@
-import 'package:blood_donation_app/src/features/donation/screens/DonationRequestScreen.dart';
-import 'package:blood_donation_app/src/features/donation/screens/createRequestScreen.dart';
-import 'package:blood_donation_app/src/features/user/screens/profileScreen.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/services.dart';
-
-import 'src/common_widgets/bottomSheet.dart';
-import 'src/features/authentication/screens/resetPasswordScreen.dart';
-import 'src/features/donor/screens/searchDonor.dart';
-import 'src/features/user/screens/contact_userScreen.dart';
 import 'src/routing/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-void main() {
+void main() async {
   
   //only portrait mode
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+  await Firebase.initializeApp();
+  FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
   runApp(const MyApp());
 }
-
+Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
+  await Firebase.initializeApp();
+  
+  print('Handling a background message ${message.messageId}');
+}
 class MyApp extends StatelessWidget {
 
   const MyApp({super.key});

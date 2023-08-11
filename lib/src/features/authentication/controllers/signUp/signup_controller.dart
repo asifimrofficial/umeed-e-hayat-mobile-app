@@ -1,10 +1,8 @@
 import 'package:blood_donation_app/src/features/authentication/controllers/user_preferences.dart/login_shared_pref.dart';
-import 'package:blood_donation_app/src/features/authentication/models/UserModel.dart';
 import 'package:blood_donation_app/src/features/authentication/screens/otpScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../../common_widgets/popup.dart';
-import '../../../../routing/route_name.dart';
 import '../../../../utils/utils.dart';
 import '../../repository/signup/signup_repository.dart';
 

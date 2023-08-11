@@ -9,6 +9,8 @@ import '../../common_widgets/custom_dialog.dart';
 import '../../common_widgets/clossingApp_Alert.dart';
 import '../../routing/route_name.dart';
 import '../donation/controllers/request/getListController.dart';
+import '../notifications/controller/notificationController.dart';
+import '../notifications/services/notification_services.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -19,8 +21,10 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   final requestListController = Get.put(RequestListController());
-
+  final notificationController = Get.put(NotificationController());
+  @override
   void initState() {
+    notificationController.setupNotificationServices();
     // TODO: implement initState
     super.initState();
     requestListController.getRequestList();
@@ -52,7 +56,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
         body: SingleChildScrollView(
-          child: Container(
+          child: SizedBox(
             height: MediaQuery.of(context).size.height,
             child: Column(
               children: [
@@ -84,7 +88,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           image: 'assets/images/ion_search.png',
                           // isEnabled: false,
                           onTap: () {
-                            Get.to(SearchDonorScreen());
+                            Get.to(const SearchDonorScreen());
                           }),
                       gridTileButton(
                           buttonText: 'Donates',
@@ -119,12 +123,12 @@ class _HomeScreenState extends State<HomeScreen> {
                           image: 'assets/images/compaign.png',
                           isEnabled: false,
                           onTap: () {
-                            Get.to(SearchDonorScreen());
+                            Get.to(const SearchDonorScreen());
                           }),
                     ],
                   ),
                 ),
-                Text("Donation Request",
+                const Text("Donation Request",
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
                 Expanded(
                     flex: 1,
@@ -132,9 +136,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       () {
                         switch (requestListController.rxRequestStatus.value) {
                           case Status.LOADING:
-                            return Center(child: CircularProgressIndicator());
+                            return const Center(child: CircularProgressIndicator());
                           case Status.ERROR:
-                            return Text("Something went wrong");
+                            return const Text("Something went wrong");
                           case Status.COMPLETED:
                             return ListView.builder(
                               itemCount: requestListController
@@ -172,7 +176,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               },
                             );
                           default:
-                            return Text("Something went wrong");
+                            return const Text("Something went wrong");
                         }
                       },
                     )),

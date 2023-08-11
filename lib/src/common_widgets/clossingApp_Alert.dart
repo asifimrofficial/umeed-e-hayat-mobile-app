@@ -37,7 +37,7 @@ import 'package:flutter/services.dart';
               width: 75,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10.0),
-                color: Color.fromARGB(255, 3, 157, 62),
+                color: const Color.fromARGB(255, 3, 157, 62),
               ),
               child:const  Text('Cancel',
                   style: TextStyle(
@@ -55,7 +55,7 @@ import 'package:flutter/services.dart';
                 borderRadius: BorderRadius.circular(20.0),
                 color: const Color.fromARGB(255, 252, 0, 0),
               ),
-              child: Text('Exit',
+              child: const Text('Exit',
               style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Colors.white,

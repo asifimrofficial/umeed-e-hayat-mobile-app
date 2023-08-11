@@ -31,7 +31,7 @@ class _SignupScreenState extends State<SignupScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image(
-                      image: AssetImage(AppImages.mainLogo),
+                      image: const AssetImage(AppImages.mainLogo),
                       height: height * .12,
                     ),
                     SizedBox(

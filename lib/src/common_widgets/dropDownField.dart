@@ -12,7 +12,7 @@ class CustomDropdownField extends StatelessWidget {
     'O+',
     'O-',
   ];
-  CustomDropdownField({ this.onChanged,required this.prefixIcon});
+  CustomDropdownField({super.key,  this.onChanged,required this.prefixIcon});
 
   @override
   Widget build(BuildContext context) {
@@ -21,19 +21,19 @@ class CustomDropdownField extends StatelessWidget {
         borderRadius: BorderRadius.circular(10.0),
         border: Border.all(color: Colors.grey),
       ),
-      padding: EdgeInsets.symmetric(horizontal: 20.0),
+      padding: const EdgeInsets.symmetric(horizontal: 20.0),
       child: Row(
         children: [
           Icon(prefixIcon,color:const Color(0xffFF2156),),
-          SizedBox(width: 8),
+          const SizedBox(width: 8),
           Expanded(
             child: DropdownButton<String>(
-              hint: Text('Select Blood Type'),
+              hint: const Text('Select Blood Type'),
               value: null,
-              icon: Icon(Icons.arrow_drop_down),
+              icon: const Icon(Icons.arrow_drop_down),
               iconSize: 24,
               elevation: 16,
-              style: TextStyle(color: Colors.black, fontSize: 16),
+              style: const TextStyle(color: Colors.black, fontSize: 16),
               underline: Container(
                 height: 0,
               ),

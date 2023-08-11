@@ -13,13 +13,13 @@ import '../constants/app_colors.dart';
             
             borderRadius: BorderRadius.circular(20.0),
           ),
-          content: Container(
+          content: SizedBox(
             height:Get.height*0.4,
             width: Get.width,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Container(
+                SizedBox(
                   height: 220,
                   child: Image.asset(
                     'assets/images/pana.png',     

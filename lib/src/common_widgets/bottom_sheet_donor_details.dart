@@ -15,18 +15,18 @@ Widget modelBottomSheet(
     required onRequestPressed}
 ) {
   return Container(
-    decoration: BoxDecoration(
+    decoration: const BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.only(
             topLeft: Radius.circular(30), topRight: Radius.circular(30))),
     height: Get.height / 2,
     width: Get.width,
     child: Padding(
-      padding: EdgeInsets.symmetric(vertical: 30),
+      padding: const EdgeInsets.symmetric(vertical: 30),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Container(
+          SizedBox(
             height: AppSizes.h10,
             child: ClipRRect(
               borderRadius: BorderRadius.circular(20),
@@ -56,7 +56,7 @@ Widget modelBottomSheet(
             height: AppSizes.h5/2.5,
           ),
           Text(name,
-              style: TextStyle(fontSize: 25, fontWeight: FontWeight.w600)),
+              style: const TextStyle(fontSize: 25, fontWeight: FontWeight.w600)),
          SizedBox(
             height: AppSizes.h1,
           ),
@@ -69,7 +69,7 @@ Widget modelBottomSheet(
                 color: AppColors.mainColor,
               ),
                Text(location,
-                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600)),
+                  style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w600)),
             ],
           ),   
           SizedBox(

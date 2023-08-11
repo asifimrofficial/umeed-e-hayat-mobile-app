@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:otp_text_field/otp_field.dart';
-import 'package:otp_text_field/otp_text_field.dart';
-import 'package:otp_text_field/style.dart';
 import '../../../common_widgets/TextField.dart';
 import '../../../common_widgets/roundedButton.dart';
 import '../../../constants/image_strings.dart';
@@ -35,7 +32,7 @@ class _OtpScreenState extends State<OtpScreen> {
               height: 120,
               ),
              const SizedBox(height: 20,),
-              Text("Please enter the OTP sent to your email "+widget.email,style: TextStyle(fontSize: 20,fontWeight: FontWeight.normal),textAlign: TextAlign.center,),
+              Text("Please enter the OTP sent to your email "+widget.email,style: const TextStyle(fontSize: 20,fontWeight: FontWeight.normal),textAlign: TextAlign.center,),
              const SizedBox(height: 20,),
               RoundedBorderFormField(
               leadingIcon: Icons.pin,

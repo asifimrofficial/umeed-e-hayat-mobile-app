@@ -1,4 +1,3 @@
-import 'dart:convert';
 class UserModel {
   String? status;
   Data? data;
@@ -15,13 +14,13 @@ class UserModel {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['status'] = this.status;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['status'] = status;
     if (this.data != null) {
       data['data'] = this.data!.toJson();
     }
-    data['token'] = this.token;
-    data['message'] = this.message;
+    data['token'] = token;
+    data['message'] = message;
     return data;
   }
 }
@@ -61,20 +60,20 @@ class Data {
     image = json['image'] != null ? Image.fromJson(json['image']) : null;
   }
   String? getID(){
-    return this.id;
+    return id;
   }
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id']=this.id;
-    data['name'] = this.name;
-    data['email'] = this.email;
-    data['city'] = this.city;
-    data['contact'] = this.contact;
-    data['bloodgroup'] = this.bloodgroup;
-    data['gender'] = this.gender;
-    data['isdonor'] = this.isdonor;
-    if (this.image != null) {
-      data['image'] = this.image!.toJson();
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['id']=id;
+    data['name'] = name;
+    data['email'] = email;
+    data['city'] = city;
+    data['contact'] = contact;
+    data['bloodgroup'] = bloodgroup;
+    data['gender'] = gender;
+    data['isdonor'] = isdonor;
+    if (image != null) {
+      data['image'] = image!.toJson();
     }
     return data;
   }
@@ -92,9 +91,9 @@ class Image {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['url'] = this.url;
-    data['id'] = this.id;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['url'] = url;
+    data['id'] = id;
     return data;
   }
 }

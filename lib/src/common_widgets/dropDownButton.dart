@@ -8,7 +8,7 @@ class MyCustomDropdown extends StatelessWidget {
   final Widget? suffixIcon;
   final void Function(String?) onChanged;
 
-  MyCustomDropdown({
+  const MyCustomDropdown({super.key, 
     required this.value, // Update to non-nullable String
     required this.items,
     required this.hintText,
@@ -43,7 +43,7 @@ class MyCustomDropdown extends StatelessWidget {
 
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10.0),
-          borderSide: BorderSide(color: const Color.fromARGB(255, 0, 0, 0)), // Customize the focused border color
+          borderSide: const BorderSide(color: Color.fromARGB(255, 0, 0, 0)), // Customize the focused border color
         ),
       ),
     );

@@ -1,4 +1,3 @@
-import 'package:intl/intl.dart';
 
 String getTimeAgo(String timestamp) {
   DateTime dateTime = DateTime.parse(timestamp);
